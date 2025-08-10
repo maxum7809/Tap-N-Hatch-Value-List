@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tap N Hatch — Pet Value List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <div class="logo"><img src="assets/logo.svg" alt="Tap N Hatch logo"></div>
+        <div>
+          <h1>Tap N Hatch — Pet Value List</h1>
+          <div class="subtitle">Official diamond value list — ordered highest → lowest</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input id="search" class="search" placeholder="Search pets..." aria-label="Search pets">
+        <select id="sort" class="select" title="Sort order">
+          <option value="desc">Sort: Highest → Lowest</option>
+          <option value="asc">Sort: Lowest → Highest</option>
+        </select>
+        <button id="download" class="btn">Download CSV</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <table aria-label="Pet values table">
+          <thead>
+            <tr>
+              <th>Pet</th>
+              <th style="width:180px">Value</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <aside class="card">
+        <div class="side-header">
+          <div>
+            <div class="small muted">Quick filters</div>
+            <div class="side-title">Show only</div>
+          </div>
+          <div class="small muted">Tip: click a pill</div>
+        </div>
+
+        <div class="pills">
+          <button class="pill" data-filter="all">All</button>
+          <button class="pill" data-filter=">=50000">50k+</button>
+          <button class="pill" data-filter=">=1000">1k+</button>
+          <button class="pill" data-filter="low">Under 1k</button>
+        </div>
+
+        <div class="categories">
+          <div class="small muted">Categories & ranges</div>
+          <div class="legend">
+            <div><strong>Exclusives:</strong> 50,000 — 100,000 diamonds</div>
+            <div><strong>Commons:</strong> 10 — 50 diamonds</div>
+          </div>
+
+          <div class="notes">
+            <div class="small muted">Legend</div>
+            <div class="muted small">• Values shown in diamonds.<br>• Ranges are listed as categories (not individual pets).<br>• Use search/sort/download to manage the list.</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small muted">Made with ❤️ for Tap N Hatch — exportable list</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
